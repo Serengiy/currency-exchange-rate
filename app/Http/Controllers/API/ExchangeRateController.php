@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Currency\ChartDataRequest;
 use App\Http\Requests\Currency\ExchangeRateRequest;
 use App\Http\Resources\ChartResource;
+use App\Http\Resources\Currencty\IndexCurrencyResource;
 use App\Http\Resources\ExchangeRateResource;
 use App\Models\Currency;
 
@@ -14,20 +15,16 @@ class ExchangeRateController extends Controller
     public function index()
     {
         $baseCurrencies = config('currencies');
-        $data = [];
+        $data = collect();
         foreach ($baseCurrencies as $currency){
             $currencyRate = Currency::query()
                 ->where('base_currency', 'USD')
                 ->where('currency', $currency)
                 ->latest()
                 ->first();
-            $data[] = [
-              'currency' => $currencyRate->currency,
-              'rate' => $currencyRate->rate_value,
-              'updated_at' => $currencyRate->rate_updated_at
-            ];
+            $data->push($currencyRate);
         }
-        return response()->json($data);
+        return IndexCurrencyResource::collection($data);
     }
     public function show(ExchangeRateRequest $request)
     {
@@ -48,7 +45,7 @@ class ExchangeRateController extends Controller
             ->where('currency', $currency_code)
             // retrieving smallest absolute difference  from available rows
             ->orderByRaw('ABS(EXTRACT(EPOCH FROM (rate_updated_at - ?)))', [$data->rate_updated_at])
-            ->paginate(3);
+            ->paginate(5);
 
         if($exchange_rate){
             return ExchangeRateResource::collection($exchange_rate);

@@ -6,13 +6,12 @@ import { ReactTabulator } from "react-tabulator";
 
 export default function CurrencyShowPage() {
     const [loading, setLoading] = useState(true)
-    const [user, setUser] = useState()
     const [rate, setRate] = useState()
     const searchParams = new URLSearchParams(window.location.search);
     const currency = searchParams.get('currency');
     const [pagination, setPagination] = useState({})
     const columns = [
-        { title: "Currency", field: "currency", formatter: "link", formatterParams:  { urlField: "currencyLink",  }},
+        { title: "Currency", field: "currency",},
         { title: "Rate", field: "rate", },
         { title: "Updated At", field: "updated_at",},
     ]

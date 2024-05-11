@@ -37,6 +37,7 @@ export default function CurrencyIndexPage() {
             });
     }
 
+
     return (
         <AuthenticatedLayout
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}

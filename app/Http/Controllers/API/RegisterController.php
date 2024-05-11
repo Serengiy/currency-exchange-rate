@@ -22,7 +22,11 @@ class RegisterController extends Controller
         $token = $user->createToken('apiToken');
 
         return response()->json([
-            'token' => $token->accessToken
+            'token' => $token->accessToken,
+            'user' => [
+                'email' =>$user->email,
+                'userName' =>$user->name,
+            ]
         ]);
     }
 
