@@ -1,0 +1,324 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "329b0336-8dbd-4112-aec1-537108477de0",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "Authenticate a user and return an access token.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"fay76@example.org\",\"password\":\"@)ksG6z\"}"
+                        },
+                        "description": "This endpoint authenticates a user with the provided email and password and returns an access token if successful.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YmRiYjM1ZmU5MDIyZDJmODVlMGI0ZTA2MzNlNGRjMGIxZTcwMzIzMTc1ZGQ5N2RkZDM1ZTlhZGRjMTQ3YmFjMDM1N2M3YzJjZWI0MmFhIn0.eyJhdWQiOiIxIiwianRpIjoiYzZiZGJiMzVmZTkwMmJkMmY4NWUwYjRlMDYzM2U0ZGMwYjFlNzAzMjMxNzVkZDk3ZGRkMzVlOWFkZGMxNDdiYWMwMzU3YzdjMmNlYjQyYWEiLCJpYXQiOjE2MjA2NDEzNzEsIm5iZiI6MTYyMDY0MTM3MSwiZXhwIjoxNjUyMTc3Mzc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CMlVcmXlM7WZxPd92jE-3nm8VyZqKYZY2F82fGO-6oXGNPDEHvZzK2d1IP-yNBrbT7zDk_UrEgCxuIeUue1Iy4_JVQp60Uv85p1SDqIhwrNPj5JNZp6uglAv2Vjx9T3Oz1VuPqFBJWYlNrFJ9H49vE5qVhA0JCyHy8NhRb6hCKL4iv7lw_ObI8u6SXG_VXI5dLRcLw7bGiYRW4Jxj-JEP0Rk5RlMqf7Wg_LdsmMNjqFqo2aKf2FBLdxH5RvbwE_NnNh5e59-fB8F-93TSx4qXfKjYWi8JXw-f7VhCAAT1z9VNUjIlTgOcQoTXs9tljEjp9Cb-9swcxqKt0CHAw\"\n  \"user\":\n    \"email\": \"example@example.com\",\n    \"userName\": \"John Doe\"",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"email\": [\"These credentials do not match our records.\"]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a new user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"iure\",\"email\":\"lbatz@example.com\",\"password\":\"12345678\",\"password_confirmation\":\"12345678\"}"
+                        },
+                        "description": "This endpoint registers a new user with the provided name, email, and password.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YmRiYjM1ZmU5MDIyZDJmODVlMGI0ZTA2MzNlNGRjMGIxZTcwMzIzMTc1ZGQ5N2RkZDM1ZTlhZGRjMTQ3YmFjMDM1N2M3YzJjZWI0MmFhIn0.eyJhdWQiOiIxIiwianRpIjoiYzZiZGJiMzVmZTkwMmJkMmY4NWUwYjRlMDYzM2U0ZGMwYjFlNzAzMjMxNzVkZDk3ZGRkMzVlOWFkZGMxNDdiYWMwMzU3YzdjMmNlYjQyYWEiLCJpYXQiOjE2MjA2NDEzNzEsIm5iZiI6MTYyMDY0MTM3MSwiZXhwIjoxNjUyMTc3Mzc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CMlVcmXlM7WZxPd92jE-3nm8VyZqKYZY2F82fGO-6oXGNPDEHvZzK2d1IP-yNBrbT7zDk_UrEgCxuIeUue1Iy4_JVQp60Uv85p1SDqIhwrNPj5JNZp6uglAv2Vjx9T3Oz1VuPqFBJWYlNrFJ9H49vE5qVhA0JCyHy8NhRb6hCKL4iv7lw_ObI8u6SXG_VXI5dLRcLw7bGiYRW4Jxj-JEP0Rk5RlMqf7Wg_LdsmMNjqFqo2aKf2FBLdxH5RvbwE_NnNh5e59-fB8F-93TSx4qXfKjYWi8JXw-f7VhCAAT1z9VNUjIlTgOcQoTXs9tljEjp9Cb-9swcxqKt0CHAw\"\n  \"user\":\n    \"email\": \"example@example.com\",\n    \"userName\": \"John Doe\"",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"name\": [\"The name field is required.\"],\n      \"email\": [\"The email field is required.\", \"The email must be a valid email address.\", \"The email has already been taken.\"],\n      \"password\": [\"The password field is required.\", \"The password confirmation does not match.\"]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get the authenticated user's information.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/me",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/me"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint retrieves the information of the authenticated user."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"user\":\n    \"email\": \"example@example.com\",\n    \"name\": \"John Doe\"",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "\"message\": \"Unauthorized.\"",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Log the authenticated user out.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint logs out the authenticated user by revoking their access token."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"success\": 1",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Exchange Rates",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display exchange rate data for chart visualization.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/charts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/charts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start_date\":\"voluptates\",\"end_date\":\"tempora\",\"base_currency\":\"USD\",\"target_currency\":\"modi\"}"
+                        },
+                        "description": "This endpoint retrieves exchange rate data for chart visualization based on the provided criteria."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"data\": [\n    {\n      \"date\": \"2024-05-01\",\n      \"rate\": 0.88\n    },\n    {\n      \"date\": \"2024-05-02\",\n      \"rate\": 0.90\n    },\n  ]",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "\"error\": \"No data available for the specified criteria\"",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"start_date\": [\"The start date field is required.\"],\n      \"end_date\": [\"The end date field is required.\"],\n      \"base_currency\": [\"The selected base currency is invalid.\"],\n      \"target_currency\": [\"The selected target currency is invalid.\"]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of available exchange rates.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/rates",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/rates"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"data\": [\n    {\n      \"currency\": \"USD\",\n      \"rate\": 1\n    },\n    {\n      \"currency\": \"THB\",\n      \"rate\": 36.601\n    }\n  ]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the exchange rates for a specific currency.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/rates\/show",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/rates\/show"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"base_currency\":\"USD\",\"currency\":\"THB\",\"rate_updated_at\":\"amet\",\"page\":6}"
+                        },
+                        "description": "This endpoint retrieves exchange rates for a specific currency based on the provided base currency and rate update timestamp."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "\"data\": [\n    {\n      \"base_currency\": \"USD\",\n      \"currency\": \"THB\",\n      \"rate\": 36.88,\n      \"rate_updated_at\": \"2024-05-12 08:00:00\"\n    },\n    {\n      \"base_currency\": \"USD\",\n      \"currency\": \"THB\",\n      \"rate\": 36.76,\n      \"rate_updated_at\": \"2024-05-12 08:01:00\"\n    }\n  ]",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "\"error\": \"Wrong base currency\"",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "\"error\": \"Not found\"",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "Authorization",
+                "type": "string"
+            }
+        ]
+    }
+}

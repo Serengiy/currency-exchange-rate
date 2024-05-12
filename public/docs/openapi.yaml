@@ -1,0 +1,286 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: 'Authenticate a user and return an access token.'
+      operationId: authenticateAUserAndReturnAnAccessToken
+      description: 'This endpoint authenticates a user with the provided email and password and returns an access token if successful.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YmRiYjM1ZmU5MDIyZDJmODVlMGI0ZTA2MzNlNGRjMGIxZTcwMzIzMTc1ZGQ5N2RkZDM1ZTlhZGRjMTQ3YmFjMDM1N2M3YzJjZWI0MmFhIn0.eyJhdWQiOiIxIiwianRpIjoiYzZiZGJiMzVmZTkwMmJkMmY4NWUwYjRlMDYzM2U0ZGMwYjFlNzAzMjMxNzVkZDk3ZGRkMzVlOWFkZGMxNDdiYWMwMzU3YzdjMmNlYjQyYWEiLCJpYXQiOjE2MjA2NDEzNzEsIm5iZiI6MTYyMDY0MTM3MSwiZXhwIjoxNjUyMTc3Mzc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CMlVcmXlM7WZxPd92jE-3nm8VyZqKYZY2F82fGO-6oXGNPDEHvZzK2d1IP-yNBrbT7zDk_UrEgCxuIeUue1Iy4_JVQp60Uv85p1SDqIhwrNPj5JNZp6uglAv2Vjx9T3Oz1VuPqFBJWYlNrFJ9H49vE5qVhA0JCyHy8NhRb6hCKL4iv7lw_ObI8u6SXG_VXI5dLRcLw7bGiYRW4Jxj-JEP0Rk5RlMqf7Wg_LdsmMNjqFqo2aKf2FBLdxH5RvbwE_NnNh5e59-fB8F-93TSx4qXfKjYWi8JXw-f7VhCAAT1z9VNUjIlTgOcQoTXs9tljEjp9Cb-9swcxqKt0CHAw\"\n  \"user\":\n    \"email\": \"example@example.com\",\n    \"userName\": \"John Doe\""
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"email\": [\"These credentials do not match our records.\"]"
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email address of the user.'
+                  example: fay76@example.org
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: '@)ksG6z'
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: 'Register a new user.'
+      operationId: registerANewUser
+      description: 'This endpoint registers a new user with the provided name, email, and password.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YmRiYjM1ZmU5MDIyZDJmODVlMGI0ZTA2MzNlNGRjMGIxZTcwMzIzMTc1ZGQ5N2RkZDM1ZTlhZGRjMTQ3YmFjMDM1N2M3YzJjZWI0MmFhIn0.eyJhdWQiOiIxIiwianRpIjoiYzZiZGJiMzVmZTkwMmJkMmY4NWUwYjRlMDYzM2U0ZGMwYjFlNzAzMjMxNzVkZDk3ZGRkMzVlOWFkZGMxNDdiYWMwMzU3YzdjMmNlYjQyYWEiLCJpYXQiOjE2MjA2NDEzNzEsIm5iZiI6MTYyMDY0MTM3MSwiZXhwIjoxNjUyMTc3Mzc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CMlVcmXlM7WZxPd92jE-3nm8VyZqKYZY2F82fGO-6oXGNPDEHvZzK2d1IP-yNBrbT7zDk_UrEgCxuIeUue1Iy4_JVQp60Uv85p1SDqIhwrNPj5JNZp6uglAv2Vjx9T3Oz1VuPqFBJWYlNrFJ9H49vE5qVhA0JCyHy8NhRb6hCKL4iv7lw_ObI8u6SXG_VXI5dLRcLw7bGiYRW4Jxj-JEP0Rk5RlMqf7Wg_LdsmMNjqFqo2aKf2FBLdxH5RvbwE_NnNh5e59-fB8F-93TSx4qXfKjYWi8JXw-f7VhCAAT1z9VNUjIlTgOcQoTXs9tljEjp9Cb-9swcxqKt0CHAw\"\n  \"user\":\n    \"email\": \"example@example.com\",\n    \"userName\": \"John Doe\""
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"name\": [\"The name field is required.\"],\n      \"email\": [\"The email field is required.\", \"The email must be a valid email address.\", \"The email has already been taken.\"],\n      \"password\": [\"The password field is required.\", \"The password confirmation does not match.\"]"
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the user.'
+                  example: iure
+                email:
+                  type: string
+                  description: 'The email address of the user.'
+                  example: lbatz@example.com
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: '12345678'
+                password_confirmation:
+                  type: string
+                  description: 'The confirmation of the password.'
+                  example: '12345678'
+              required:
+                - name
+                - email
+                - password
+                - password_confirmation
+      security: []
+  /api/me:
+    post:
+      summary: "Get the authenticated user's information."
+      operationId: getTheAuthenticatedUsersInformation
+      description: 'This endpoint retrieves the information of the authenticated user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"user\":\n    \"email\": \"example@example.com\",\n    \"name\": \"John Doe\""
+        403:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '"message": "Unauthorized."'
+      tags:
+        - Authentication
+  /api/logout:
+    post:
+      summary: 'Log the authenticated user out.'
+      operationId: logTheAuthenticatedUserOut
+      description: 'This endpoint logs out the authenticated user by revoking their access token.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '"success": 1'
+      tags:
+        - Authentication
+  /api/charts:
+    get:
+      summary: 'Display exchange rate data for chart visualization.'
+      operationId: displayExchangeRateDataForChartVisualization
+      description: 'This endpoint retrieves exchange rate data for chart visualization based on the provided criteria.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"data\": [\n    {\n      \"date\": \"2024-05-01\",\n      \"rate\": 0.88\n    },\n    {\n      \"date\": \"2024-05-02\",\n      \"rate\": 0.90\n    },\n  ]"
+        404:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '"error": "No data available for the specified criteria"'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"message\": \"The given data was invalid.\",\n  \"errors\":\n      \"start_date\": [\"The start date field is required.\"],\n      \"end_date\": [\"The end date field is required.\"],\n      \"base_currency\": [\"The selected base currency is invalid.\"],\n      \"target_currency\": [\"The selected target currency is invalid.\"]"
+      tags:
+        - 'Exchange Rates'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start_date:
+                  type: string
+                  description: 'The start date for the data range (format: "Y-m-d").'
+                  example: voluptates
+                end_date:
+                  type: string
+                  description: 'The end date for the data range (format: "Y-m-d").'
+                  example: tempora
+                base_currency:
+                  type: string
+                  description: 'optional USD default The base currency code.'
+                  example: USD
+                target_currency:
+                  type: string
+                  description: 'The target currency code.'
+                  example: modi
+              required:
+                - start_date
+                - end_date
+                - target_currency
+  /api/rates:
+    get:
+      summary: 'Display a listing of available exchange rates.'
+      operationId: displayAListingOfAvailableExchangeRates
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"data\": [\n    {\n      \"currency\": \"USD\",\n      \"rate\": 1\n    },\n    {\n      \"currency\": \"THB\",\n      \"rate\": 36.601\n    }\n  ]"
+      tags:
+        - 'Exchange Rates'
+  /api/rates/show:
+    get:
+      summary: 'Display the exchange rates for a specific currency.'
+      operationId: displayTheExchangeRatesForASpecificCurrency
+      description: 'This endpoint retrieves exchange rates for a specific currency based on the provided base currency and rate update timestamp.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "\"data\": [\n    {\n      \"base_currency\": \"USD\",\n      \"currency\": \"THB\",\n      \"rate\": 36.88,\n      \"rate_updated_at\": \"2024-05-12 08:00:00\"\n    },\n    {\n      \"base_currency\": \"USD\",\n      \"currency\": \"THB\",\n      \"rate\": 36.76,\n      \"rate_updated_at\": \"2024-05-12 08:01:00\"\n    }\n  ]"
+        400:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '"error": "Wrong base currency"'
+        404:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '"error": "Not found"'
+      tags:
+        - 'Exchange Rates'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                base_currency:
+                  type: string
+                  description: 'optional USD default The base currency code.'
+                  example: USD
+                currency:
+                  type: string
+                  description: 'The target currency code.'
+                  example: THB
+                rate_updated_at:
+                  type: string
+                  description: 'optional The timestamp of the rate update (in UTC) in the format "Y-m-d H:i:s".'
+                  example: amet
+                page:
+                  type: integer
+                  description: ''
+                  example: 6
+              required:
+                - currency
+tags:
+  -
+    name: Authentication
+    description: ''
+  -
+    name: 'Exchange Rates'
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

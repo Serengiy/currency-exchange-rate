@@ -1,0 +1,267 @@
+name: 'Exchange Rates'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/charts
+    metadata:
+      groupName: 'Exchange Rates'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display exchange rate data for chart visualization.'
+      description: 'This endpoint retrieves exchange rate data for chart visualization based on the provided criteria.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      start_date:
+        name: start_date
+        description: 'The start date for the data range (format: "Y-m-d").'
+        required: true
+        example: voluptates
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'The end date for the data range (format: "Y-m-d").'
+        required: true
+        example: tempora
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      base_currency:
+        name: base_currency
+        description: 'optional USD default The base currency code.'
+        required: false
+        example: USD
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      target_currency:
+        name: target_currency
+        description: 'The target currency code.'
+        required: true
+        example: modi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      start_date: voluptates
+      end_date: tempora
+      base_currency: USD
+      target_currency: modi
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          "data": [
+              {
+                "date": "2024-05-01",
+                "rate": 0.88
+              },
+              {
+                "date": "2024-05-02",
+                "rate": 0.90
+              },
+            ]
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '"error": "No data available for the specified criteria"'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          "message": "The given data was invalid.",
+            "errors":
+                "start_date": ["The start date field is required."],
+                "end_date": ["The end date field is required."],
+                "base_currency": ["The selected base currency is invalid."],
+                "target_currency": ["The selected target currency is invalid."]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ge1vh36V4EdD56PZafbkca8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/rates
+    metadata:
+      groupName: 'Exchange Rates'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of available exchange rates.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          "data": [
+              {
+                "currency": "USD",
+                "rate": 1
+              },
+              {
+                "currency": "THB",
+                "rate": 36.601
+              }
+            ]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 46ghZaEdPkbfDVe85a13vc6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/rates/show
+    metadata:
+      groupName: 'Exchange Rates'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the exchange rates for a specific currency.'
+      description: 'This endpoint retrieves exchange rates for a specific currency based on the provided base currency and rate update timestamp.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      base_currency:
+        name: base_currency
+        description: 'optional USD default The base currency code.'
+        required: false
+        example: USD
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      currency:
+        name: currency
+        description: 'The target currency code.'
+        required: true
+        example: THB
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      rate_updated_at:
+        name: rate_updated_at
+        description: 'optional The timestamp of the rate update (in UTC) in the format "Y-m-d H:i:s".'
+        required: false
+        example: amet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      base_currency: USD
+      currency: THB
+      rate_updated_at: amet
+      page: 6
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          "data": [
+              {
+                "base_currency": "USD",
+                "currency": "THB",
+                "rate": 36.88,
+                "rate_updated_at": "2024-05-12 08:00:00"
+              },
+              {
+                "base_currency": "USD",
+                "currency": "THB",
+                "rate": 36.76,
+                "rate_updated_at": "2024-05-12 08:01:00"
+              }
+            ]
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 400
+        content: '"error": "Wrong base currency"'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '"error": "Not found"'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZDc6Vd435b6gfEkev18aPh'
+    controller: null
+    method: null
+    route: null
+    custom: []
