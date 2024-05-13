@@ -44,6 +44,7 @@ class RetrieveDataFromApi extends Command
                 }
             }
         }
+        dd('done');
 
     }
 }
