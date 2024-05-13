@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "329b0336-8dbd-4112-aec1-537108477de0",
+        "_postman_id": "e07580eb-b8ca-4f5c-8805-986694c72466",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"fay76@example.org\",\"password\":\"@)ksG6z\"}"
+                            "raw": "{\"email\":\"example@example.com\",\"password\":\"8IO7wnCIu^vn\"}"
                         },
                         "description": "This endpoint authenticates a user with the provided email and password and returns an access token if successful.",
                         "auth": {
@@ -85,7 +85,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"iure\",\"email\":\"lbatz@example.com\",\"password\":\"12345678\",\"password_confirmation\":\"12345678\"}"
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"example@example.com\",\"password\":\"12345678\",\"password_confirmation\":\"12345678\"}"
                         },
                         "description": "This endpoint registers a new user with the provided name, email, and password.",
                         "auth": {
@@ -205,7 +205,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"start_date\":\"voluptates\",\"end_date\":\"tempora\",\"base_currency\":\"USD\",\"target_currency\":\"modi\"}"
+                            "raw": "{\"start_date\":\"quisquam\",\"end_date\":\"beatae\",\"base_currency\":\"USD\",\"target_currency\":\"sunt\"}"
                         },
                         "description": "This endpoint retrieves exchange rate data for chart visualization based on the provided criteria."
                     },
@@ -284,7 +284,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"base_currency\":\"USD\",\"currency\":\"THB\",\"rate_updated_at\":\"amet\",\"page\":6}"
+                            "raw": "{\"base_currency\":\"USD\",\"currency\":\"THB\",\"rate_updated_at\":\"labore\",\"page\":19}"
                         },
                         "description": "This endpoint retrieves exchange rates for a specific currency based on the provided base currency and rate update timestamp."
                     },

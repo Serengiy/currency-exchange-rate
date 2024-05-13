@@ -20,7 +20,7 @@ class AuthController extends Controller
      *
      * @group Authentication
      *
-     * @bodyParam email string required The email address of the user.
+     * @bodyParam email string required The email address of the user. Example: example@example.com
      * @bodyParam password string required The password of the user.
      *
      * @response

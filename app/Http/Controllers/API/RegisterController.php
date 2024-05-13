@@ -16,8 +16,8 @@ class RegisterController extends Controller
      *
      * @group Authentication
      *
-     * @bodyParam name string required The name of the user.
-     * @bodyParam email string required The email address of the user.
+     * @bodyParam name string required The name of the user. Example: John Doe
+     * @bodyParam email string required The email address of the user. Example: example@example.com
      * @bodyParam password string required The password of the user. Example: 12345678
      * @bodyParam password_confirmation string required The confirmation of the password. Example: 12345678
      *

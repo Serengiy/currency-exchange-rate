@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,17 +13,17 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
-
-Route::get('/currency-rate', function () {
-    return Inertia::render('Currency/Index');
-})->name('currency.index');
-
-Route::get('/currency-rate/show', function () {
-    return Inertia::render('Currency/Show');
-})->name('currency.show');
+//Route::get('/dashboard', function () {
+//    return Inertia::render('Dashboard');
+//})->name('dashboard');
+//
+//Route::get('/currency-rate', function () {
+//    return Inertia::render('Currency/Index');
+//})->name('currency.index');
+//
+//Route::get('/currency-rate/show', function () {
+//    return Inertia::render('Currency/Show');
+//})->name('currency.show');
 
 //Route::middleware('auth')->group(function () {
 //    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

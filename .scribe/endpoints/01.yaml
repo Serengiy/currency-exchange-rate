@@ -27,7 +27,7 @@ endpoints:
         name: start_date
         description: 'The start date for the data range (format: "Y-m-d").'
         required: true
-        example: voluptates
+        example: quisquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,7 +36,7 @@ endpoints:
         name: end_date
         description: 'The end date for the data range (format: "Y-m-d").'
         required: true
-        example: tempora
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -54,16 +54,16 @@ endpoints:
         name: target_currency
         description: 'The target currency code.'
         required: true
-        example: modi
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      start_date: voluptates
-      end_date: tempora
+      start_date: quisquam
+      end_date: beatae
       base_currency: USD
-      target_currency: modi
+      target_currency: sunt
     fileParameters: []
     responses:
       -
@@ -104,7 +104,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ge1vh36V4EdD56PZafbkca8'
+      - 'Bearer f31Dkeh86E45adbPcZaVgv6'
     controller: null
     method: null
     route: null
@@ -154,7 +154,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 46ghZaEdPkbfDVe85a13vc6'
+      - 'Bearer 8346ZbfPv6kVgaa5DchdEe1'
     controller: null
     method: null
     route: null
@@ -203,7 +203,7 @@ endpoints:
         name: rate_updated_at
         description: 'optional The timestamp of the rate update (in UTC) in the format "Y-m-d H:i:s".'
         required: false
-        example: amet
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -212,7 +212,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 6
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -220,8 +220,8 @@ endpoints:
     cleanBodyParameters:
       base_currency: USD
       currency: THB
-      rate_updated_at: amet
-      page: 6
+      rate_updated_at: labore
+      page: 19
     fileParameters: []
     responses:
       -
@@ -260,7 +260,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aZDc6Vd435b6gfEkev18aPh'
+      - 'Bearer Vg6h5aaPv6Z1kfe84DE3cbd'
     controller: null
     method: null
     route: null

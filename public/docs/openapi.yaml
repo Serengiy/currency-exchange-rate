@@ -40,11 +40,11 @@ paths:
                 email:
                   type: string
                   description: 'The email address of the user.'
-                  example: fay76@example.org
+                  example: example@example.com
                 password:
                   type: string
                   description: 'The password of the user.'
-                  example: '@)ksG6z'
+                  example: 8IO7wnCIu^vn
               required:
                 - email
                 - password
@@ -82,11 +82,11 @@ paths:
                 name:
                   type: string
                   description: 'The name of the user.'
-                  example: iure
+                  example: 'John Doe'
                 email:
                   type: string
                   description: 'The email address of the user.'
-                  example: lbatz@example.com
+                  example: example@example.com
                 password:
                   type: string
                   description: 'The password of the user.'
@@ -180,11 +180,11 @@ paths:
                 start_date:
                   type: string
                   description: 'The start date for the data range (format: "Y-m-d").'
-                  example: voluptates
+                  example: quisquam
                 end_date:
                   type: string
                   description: 'The end date for the data range (format: "Y-m-d").'
-                  example: tempora
+                  example: beatae
                 base_currency:
                   type: string
                   description: 'optional USD default The base currency code.'
@@ -192,7 +192,7 @@ paths:
                 target_currency:
                   type: string
                   description: 'The target currency code.'
-                  example: modi
+                  example: sunt
               required:
                 - start_date
                 - end_date
@@ -261,11 +261,11 @@ paths:
                 rate_updated_at:
                   type: string
                   description: 'optional The timestamp of the rate update (in UTC) in the format "Y-m-d H:i:s".'
-                  example: amet
+                  example: labore
                 page:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 19
               required:
                 - currency
 tags:
