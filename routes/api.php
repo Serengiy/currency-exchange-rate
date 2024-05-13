@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('login', [\App\Http\Controllers\API\AuthController::class, 'store'])->name('login.api');
-Route::post('test', function (){
+Route::get('test', function (){
     return 'ok';
 })->name('login.api');
 Route::post('register', [\App\Http\Controllers\API\RegisterController::class, 'store'])->name('register.api');
